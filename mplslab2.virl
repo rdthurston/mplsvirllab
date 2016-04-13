@@ -94,6 +94,7 @@ ip forward-protocol nd
 router ospf 100
  log-adjacency-changes
  network 172.16.0.0 255.255.255.0 area 0
+ network 172.16.1.0 255.255.255.0 area 0
  
 router ospf 1000 vrf CUST
  log-adjacency-changes
@@ -259,6 +260,7 @@ ip forward-protocol nd
 router ospf 100
  log-adjacency-changes
  network 172.16.0.0 255.255.255.0 area 0
+ network 172.16.1.0 255.255.255.0 area 0
 
 router ospf 1000 vrf CUST
  log-adjacency-changes
@@ -423,6 +425,7 @@ ip forward-protocol nd
 router ospf 100
  log-adjacency-changes
  network 172.16.0.0 255.255.255.0 area 0
+ network 172.16.1.0 255.255.255.0 area 0
  
 router ospf 1000 vrf CUST
  log-adjacency-changes
@@ -1002,6 +1005,7 @@ ip forward-protocol nd
 router ospf 100
  log-adjacency-changes
  network 172.16.0.0 255.255.255.0 area 0
+ network 172.16.1.0 255.255.255.0 area 0
  network 172.16.2.0 255.255.255.0 area 0
  
 router bgp 64512
@@ -1170,6 +1174,7 @@ ip forward-protocol nd
 router ospf 100
  log-adjacency-changes
  network 172.16.2.0 255.255.255.0 area 0
+ network 172.16.1.0 255.255.255.0 area 0
  
 router ospf 1000 vrf CUST
  log-adjacency-changes
