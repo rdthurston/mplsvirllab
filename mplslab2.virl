@@ -963,10 +963,6 @@ redundancy
 !
 !
 ! 
-ip vrf CUST
- rd 64512:1
- route-target export 64512:1
- route-target import 64512:1
 !
 !
 !
