@@ -67,14 +67,14 @@ ip vrf FNSB
 !
 !
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet0/1
  no ip address
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/1
+interface GigabitEthernet0/2
  no ip address
  shutdown
  duplex auto
@@ -196,14 +196,14 @@ redundancy
 !
 !
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet0/1
  no ip address
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/1
+interface GigabitEthernet0/2
  no ip address
  shutdown
  duplex auto
@@ -325,14 +325,14 @@ redundancy
 !
 !
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet0/1
  no ip address
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/1
+interface GigabitEthernet0/2
  no ip address
  shutdown
  duplex auto
@@ -454,14 +454,14 @@ redundancy
 !
 !
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet0/1
  no ip address
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/1
+interface GigabitEthernet0/2
  no ip address
  shutdown
  duplex auto
@@ -583,14 +583,14 @@ redundancy
 !
 !
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet0/1
  no ip address
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/1
+interface GigabitEthernet0/2
  no ip address
  shutdown
  duplex auto
@@ -712,14 +712,14 @@ redundancy
 !
 !
 !
-interface GigabitEthernet0/0
+interface GigabitEthernet0/1
  no ip address
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
-interface GigabitEthernet0/1
+interface GigabitEthernet0/2
  no ip address
  shutdown
  duplex auto
