@@ -54,7 +54,7 @@ redundancy
 !
 !
 ! 
-ip vrf FNSB
+ip vrf CUST
  rd 64512:1
  route-target export 64512:1
  route-target import 64512:1
@@ -83,7 +83,7 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  description CUSTOMER_UPLINK
- ip vrf forwarding FNSB
+ ip vrf forwarding CUST
  ip address 192.168.0.1 255.255.255.0
  no shutdown
  duplex auto
@@ -93,7 +93,7 @@ interface GigabitEthernet0/2
 ip forward-protocol nd
 !
 
-router ospf 100 vrf FNSB
+router ospf 100 vrf CUST
  log-adjacency-changes
  redistribute bgp 64512 metric-type 1 subnets
  network 192.168.0.0 255.255.255.0 area 0
@@ -110,7 +110,7 @@ router bgp 64512
  neighbor 172.16.0.3 send-community extended
  neighbor 172.16.0.3 activate
  exit-address-family
- address-family ipv4 vrf FNSB
+ address-family ipv4 vrf CUST
  redistribute connected
  redistribute ospf 100 match internal external 1 external 2
  no auto-summary
@@ -198,7 +198,7 @@ mmi snmp-timeout 180
 !
 !
 !
-ip vrf FNSB
+ip vrf CUST
  rd 64512:1
  route-target export 64512:1
  route-target import 64512:1
@@ -248,7 +248,7 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  description CUSTOMER_UPLINK
- ip vrf forwarding FNSB
+ ip vrf forwarding CUST
  ip address 192.168.1.1 255.255.255.0
  no shutdown
  duplex auto
@@ -258,7 +258,7 @@ interface GigabitEthernet0/2
 ip forward-protocol nd
 !
 
-router ospf 100 vrf FNSB
+router ospf 100 vrf CUST
  log-adjacency-changes
  redistribute bgp 64512 metric-type 1 subnets
  network 192.168.1.0 255.255.255.0 area 0
@@ -275,7 +275,7 @@ router bgp 64512
  neighbor 172.16.0.3 send-community extended
  neighbor 172.16.0.3 activate
  exit-address-family
- address-family ipv4 vrf FNSB
+ address-family ipv4 vrf CUST
  redistribute connected
  redistribute ospf 100 match internal external 1 external 2
  no auto-summary
@@ -364,7 +364,7 @@ mmi snmp-timeout 180
 !
 !
 !
-ip vrf FNSB
+ip vrf CUST
  rd 64512:1
  route-target export 64512:1
  route-target import 64512:1
@@ -413,7 +413,7 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  description CUSTOMER_UPLINK
- ip vrf forwarding FNSB
+ ip vrf forwarding CUST
  ip address 192.168.2.1 255.255.255.0
  no shutdown
  duplex auto
@@ -423,7 +423,7 @@ interface GigabitEthernet0/2
 ip forward-protocol nd
 !
 
-router ospf 100 vrf FNSB
+router ospf 100 vrf CUST
  log-adjacency-changes
  redistribute bgp 64512 metric-type 1 subnets
  network 192.168.2.0 255.255.255.0 area 0
@@ -442,7 +442,7 @@ router bgp 64512
  neighbor 172.16.0.1 send-community extended
  neighbor 172.16.0.1 activate
  exit-address-family
- address-family ipv4 vrf FNSB
+ address-family ipv4 vrf CUST
  redistribute connected
  redistribute ospf 100 match internal external 1 external 2
  no auto-summary
@@ -499,7 +499,7 @@ end</entry>
     <interface name="GigabitEthernet0/1" id="0"/>
 	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
-  <node location="730,165" type="SIMPLE" subtype="IOSv" name="FNSB-RTR-1">
+  <node location="730,165" type="SIMPLE" subtype="IOSv" name="CUST-RTR-1">
     <extensions>
       <entry key="AutoNetkit.ASN" type="Integer">1</entry>
       <entry key="config" type="String">!
@@ -510,7 +510,7 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname FNSB-RTR-1
+hostname CUST-RTR-1
 !
 boot-start-marker
 boot-end-marker
@@ -637,7 +637,7 @@ end</entry>
     <interface name="GigabitEthernet0/1" id="0"/>
 	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
-  <node location="730,404" type="SIMPLE" subtype="IOSv" name="FNSB-RTR-2">
+  <node location="730,404" type="SIMPLE" subtype="IOSv" name="CUST-RTR-2">
     <extensions>
       <entry key="AutoNetkit.ASN" type="Integer">1</entry>
       <entry key="config" type="String">!
@@ -648,7 +648,7 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname FNSB-RTR-2
+hostname CUST-RTR-2
 !
 boot-start-marker
 boot-end-marker
@@ -774,7 +774,7 @@ end</entry>
     <interface name="GigabitEthernet0/1" id="0"/>
 	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
-  <node location="730,546" type="SIMPLE" subtype="IOSv" name="FNSB-RTR-3">
+  <node location="730,546" type="SIMPLE" subtype="IOSv" name="CUST-RTR-3">
     <extensions>
       <entry key="AutoNetkit.ASN" type="Integer">1</entry>
       <entry key="config" type="String">!
@@ -785,7 +785,7 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname FNSB-RTR-3
+hostname CUST-RTR-3
 !
 boot-start-marker
 boot-end-marker
