@@ -130,8 +130,8 @@ no scheduler allocate
 !
 end</entry>
     </extensions>
-    <interface name="GigabitEthernet0/0" id="0"/>
-    <interface name="GigabitEthernet0/1" id="1"/>
+    <interface name="GigabitEthernet0/1" id="0"/>
+	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
   <node location="609,404" type="SIMPLE" subtype="IOSv" name="AC-RTR-EDGE-2">
     <extensions>
@@ -259,8 +259,8 @@ no scheduler allocate
 !
 end</entry>
     </extensions>
-    <interface name="GigabitEthernet0/0" id="0"/>
-    <interface name="GigabitEthernet0/1" id="1"/>
+    <interface name="GigabitEthernet0/1" id="0"/>
+	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
   <node location="609,546" type="SIMPLE" subtype="IOSv" name="AC-RTR-EDGE-3">
     <extensions>
@@ -388,8 +388,8 @@ no scheduler allocate
 !
 end</entry>
     </extensions>
-    <interface name="GigabitEthernet0/0" id="0"/>
-    <interface name="GigabitEthernet0/1" id="1"/>
+    <interface name="GigabitEthernet0/1" id="0"/>
+	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
   <node location="730,165" type="SIMPLE" subtype="IOSv" name="FNSB-RTR-1">
     <extensions>
@@ -517,8 +517,8 @@ no scheduler allocate
 !
 end</entry>
     </extensions>
-    <interface name="GigabitEthernet0/0" id="0"/>
-	<interface name="GigabitEthernet0/1" id="1"/>
+    <interface name="GigabitEthernet0/1" id="0"/>
+	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
   <node location="730,404" type="SIMPLE" subtype="IOSv" name="FNSB-RTR-2">
     <extensions>
@@ -646,8 +646,8 @@ no scheduler allocate
 !
 end</entry>
     </extensions>
-    <interface name="GigabitEthernet0/0" id="0"/>
-	<interface name="GigabitEthernet0/1" id="1"/>
+    <interface name="GigabitEthernet0/1" id="0"/>
+	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
   <node location="730,546" type="SIMPLE" subtype="IOSv" name="FNSB-RTR-3">
     <extensions>
@@ -775,8 +775,8 @@ no scheduler allocate
 !
 end</entry>
     </extensions>
-    <interface name="GigabitEthernet0/0" id="0"/>
-	<interface name="GigabitEthernet0/1" id="1"/>
+    <interface name="GigabitEthernet0/1" id="0"/>
+	<interface name="GigabitEthernet0/2" id="1"/>
   </node>
   <node location="436,357" type="SIMPLE" subtype="Unmanaged Switch" name="unmanaged_switch-1">
     <extensions>
