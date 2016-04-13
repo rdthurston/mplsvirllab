@@ -73,6 +73,7 @@ interface GigabitEthernet0/1
  description CORE_UPLINK
  ip address 172.16.0.1 255.255.255.0
  mpls ip
+ mpls label protocol ldp
  no shutdown
  duplex auto
  speed auto
@@ -91,6 +92,8 @@ ip forward-protocol nd
 !
 
 router ospf 100 vrf FNSB
+ log-adjacency-changes
+ redistribute bgp 64512 metric-type 1 subnets
  network 192.168.0.0 255.255.255.0 area 0
 
 router bgp 64512
@@ -104,6 +107,13 @@ router bgp 64512
  neighbor 172.16.0.2 activate
  neighbor 172.16.0.3 send-community extended
  neighbor 172.16.0.3 activate
+ exit-address-family
+ address-family ipv4 vrf FNSB
+ redistribute connected
+ redistribute ospf 100 match internal external 1 external 2
+ no auto-summary
+ no synchronization
+ exit-address-family
  
 !
 no ip http server
@@ -224,6 +234,7 @@ interface GigabitEthernet0/1
  description CORE_UPLINK
  ip address 172.16.0.2 255.255.255.0
  mpls ip
+ mpls label protocol ldp
  no shutdown
  duplex auto
  speed auto
@@ -242,6 +253,8 @@ ip forward-protocol nd
 !
 
 router ospf 100 vrf FNSB
+ log-adjacency-changes
+ redistribute bgp 64512 metric-type 1 subnets
  network 192.168.1.0 255.255.255.0 area 0
 
 router bgp 64512
@@ -255,6 +268,13 @@ router bgp 64512
  neighbor 172.16.0.1 activate
  neighbor 172.16.0.3 send-community extended
  neighbor 172.16.0.3 activate
+ exit-address-family
+ address-family ipv4 vrf FNSB
+ redistribute connected
+ redistribute ospf 100 match internal external 1 external 2
+ no auto-summary
+ no synchronization
+ exit-address-family
 !
 !
 no ip http server
@@ -375,6 +395,7 @@ interface GigabitEthernet0/1
  description CORE_UPLINK
  ip address 172.16.0.3 255.255.255.0
  mpls ip
+ mpls label protocol ldp
  no shutdown
  duplex auto
  speed auto
@@ -393,9 +414,13 @@ ip forward-protocol nd
 !
 
 router ospf 100 vrf FNSB
+ log-adjacency-changes
+ redistribute bgp 64512 metric-type 1 subnets
  network 192.168.2.0 255.255.255.0 area 0
 
 router bgp 64512
+ no synchronization
+ bgp log-neighbor changes
  no bgp defgault ipv4-unicast
  neighbor 172.16.0.2 remote-as 64512
  neighbor 172.16.0.2 activate
@@ -406,6 +431,13 @@ router bgp 64512
  neighbor 172.16.0.2 activate
  neighbor 172.16.0.1 send-community extended
  neighbor 172.16.0.1 activate
+ exit-address-family
+ address-family ipv4 vrf FNSB
+ redistribute connected
+ redistribute ospf 100 match internal external 1 external 2
+ no auto-summary
+ no synchronization
+ exit-address-family
 !
 !
 no ip http server
@@ -539,7 +571,11 @@ interface GigabitEthernet0/2
 ip forward-protocol nd
 !
 router ospf 100
+ log-adjacency-changes
+ auto-cost reference-bandwidth 1000
+ redistribute connected subnets
  network 192.168.0.2 255.255.255.255 area 0
+ network 10.0.0.0 255.255.255.0 area 0
 !
 !
 no ip http server
@@ -673,7 +709,11 @@ interface GigabitEthernet0/2
 ip forward-protocol nd
 !
 router ospf 100
+ log-adjacency-changes
+ auto-cost reference-bandwidth 1000
+ redistribute connected subnets
  network 192.168.1.2 255.255.255.255 area 0
+ network 10.0.0.0 255.255.255.0 area 0
 !
 no ip http server
 no ip http secure-server
@@ -806,7 +846,11 @@ interface GigabitEthernet0/2
 ip forward-protocol nd
 !
 router ospf 100
+ log-adjacency-changes
+ auto-cost reference-bandwidth 1000
+ redistribute connected subnets
  network 192.168.2.2 255.255.255.255 area 0
+ network 10.0.0.0 255.255.255.0 area 0
 !
 no ip http server
 no ip http secure-server
