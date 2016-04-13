@@ -56,6 +56,8 @@ redundancy
 ! 
 ip vrf FNSB
  rd 64512:1
+ route-target export 64512:1
+ route-target import 64512:1
 !
 !
 !
@@ -196,6 +198,10 @@ mmi snmp-timeout 180
 !
 !
 !
+ip vrf FNSB
+ rd 64512:1
+ route-target export 64512:1
+ route-target import 64512:1
 !
 !
 !
@@ -358,6 +364,10 @@ mmi snmp-timeout 180
 !
 !
 !
+ip vrf FNSB
+ rd 64512:1
+ route-target export 64512:1
+ route-target import 64512:1
 !
 !
 !
